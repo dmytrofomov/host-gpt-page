@@ -1,0 +1,4 @@
+# HostGPT robots
+User-agent: *
+Allow: /
+Sitemap: https://hostgpt.org/sitemap.xml

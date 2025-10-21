@@ -4,123 +4,234 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>HostGPT — Telegram-бот для орендодавців та гостей</title>
-  <meta name="description" content="HostGPT — простий Telegram-бот для туристичної нерухомості: миттєві відповіді 24/7, deep-link для гостей, Inbox для запитів власнику, базові FAQ-відповіді." />
+  <title>HostGPT — AI агент‑консьєрж у Telegram для орендодавців і гостей • Безкоштовно поки що</title>
+  <meta name="description" content="HostGPT — AI агент‑консьєрж у Telegram для туристичної нерухомості. Миттєві відповіді 24/7 на часті питання гостей, deep‑link на об’єкт, Inbox для складних запитів, база знань. Бот безкоштовний поки що." />
   <link rel="canonical" href="https://hostgpt.org/" />
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" as="image" href="/hero.jpg" imagesrcset="/hero.jpg 1x" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Robots -->
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="HostGPT — Telegram-бот для орендодавців та гостей" />
-  <meta property="og:description" content="Відповіді гостям 24/7 у Telegram. Лінк для гостей в один клік, запитання у Inbox власника, база знань за об’єктом." />
+  <meta property="og:site_name" content="HostGPT" />
+  <meta property="og:title" content="HostGPT — AI агент‑консьєрж у Telegram для орендодавців і гостей" />
+  <meta property="og:description" content="Відповіді гостям 24/7. Deep‑link на об’єкт, Inbox для власника, база знань. Безкоштовно поки що." />
   <meta property="og:url" content="https://hostgpt.org/" />
   <meta property="og:image" content="https://hostgpt.org/og-image.jpg" />
+  <meta property="og:locale" content="uk_UA" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HostGPT — Telegram-бот для орендодавців та гостей" />
-  <meta name="twitter:description" content="Миттєві відповіді гостям у Telegram. Без зайвого." />
+  <meta name="twitter:title" content="HostGPT — AI агент‑консьєрж у Telegram" />
+  <meta name="twitter:description" content="Миттєві відповіді гостям у Telegram. Deep‑link, Inbox, база знань. Безкоштовно поки що." />
   <meta name="twitter:image" content="https://hostgpt.org/og-image.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Alternate phrasings / discoverability -->
+  <meta name="keywords" content="AI агент у Telegram, AI консʼєрж для оренди, бот для орендодавців, чат-бот апартаменти, чатбот готель, бот для Airbnb, бот для Букінг, бот нерухомість, відповіді гостям, автоматизація гостинності" />
 
-  <!-- JSON-LD: WebSite -->
+  <!-- JSON-LD: WebSite + SoftwareApplication + FAQPage -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"HostGPT",
-    "url":"https://hostgpt.org/",
-    "inLanguage":"uk-UA",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://t.me/host_gpt_bot",
-      "query-input":"required name=query"
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HostGPT",
+    "url": "https://hostgpt.org/",
+    "inLanguage": "uk-UA",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://t.me/host_gpt_bot",
+      "query-input": "required name=query"
     },
-    "sameAs":["https://t.me/host_gpt_bot"]
+    "sameAs": ["https://t.me/host_gpt_bot"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HostGPT",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Chatbot",
+    "operatingSystem": "Telegram",
+    "url": "https://hostgpt.org/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "AI агент‑консьєрж для орендодавців",
+      "Відповіді гостям 24/7 у Telegram",
+      "Deep‑link на конкретний об’єкт",
+      "Inbox для складних запитів",
+      "Самонавчальна база знань"
+    ],
+    "sameAs": ["https://t.me/host_gpt_bot"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Чи безкоштовний HostGPT?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Так, бот безкоштовний поки що. Надалі може з’явитися платний план з додатковими функціями." }
+    },{
+      "@type": "Question",
+      "name": "Що таке AI агент‑консьєрж у Telegram?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Це бот‑помічник, який автоматично відповідає гостям на типові запитання (Wi‑Fi, інструкції, заселення/виїзд), а складні звернення пересилає власнику у вигляді повідомлення (Inbox)." }
+    },{
+      "@type": "Question",
+      "name": "Як HostGPT допомагає орендодавцям?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Зменшує кількість повторних питань, економить час на комунікації, підвищує швидкість відповіді (SLA) та задоволеність гостей, фіксує часті запити у базу знань по кожному об’єкту." }
+    },{
+      "@type": "Question",
+      "name": "Чи можна підключити кілька об’єктів?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Так. Додавайте кожен об’єкт окремо і діліться його deep‑link із гостями." }
+    },{
+      "@type": "Question",
+      "name": "Чи зберігаються відповіді?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Так, Q&A зберігаються за об’єктом, тому відповіді стають точнішими з часом." }
+    }]
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Пропустити до основного вмісту</a>
+
   <!-- HERO -->
-  <header class="hero" id="top">
+  <header class="hero" id="top" role="banner">
     <div class="hero__content">
-      <p class="hero__badge">Telegram-бот</p>
-      <h1>HostGPT — відповіді гостям 24/7</h1>
+      <p class="hero__badge">AI агент у Telegram</p>
+      <h1>HostGPT — AI агент‑консьєрж для орендодавців</h1>
       <p class="hero__lead">
-        Бот у Telegram для туристичної нерухомості. Миттєві відповіді на типові питання, лінк для гостей в один клік, складні запити — у ваш Inbox.
+        Миттєві відповіді 24/7 на часті питання гостей. Deep‑link на об’єкт у один клік, складні запити — у ваш Inbox. Бот безкоштовний поки що.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener">🚀 Відкрити @host_gpt_bot</a>
-        <a class="btn btn--ghost" href="tg://resolve?domain=host_gpt_bot">Відкрити у застосунку</a>
+        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer" aria-label="Відкрити HostGPT у Telegram">@host_gpt_bot</a>
+        <a class="btn btn--ghost" href="tg://resolve?domain=host_gpt_bot" aria-label="Відкрити у застосунку Telegram">Відкрити у застосунку</a>
       </div>
     </div>
     <figure class="hero__media" role="presentation" aria-hidden="true">
-      <img src="hero.jpg" alt="" loading="lazy">
+      <img src="/hero.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async">
     </figure>
   </header>
 
-  <main>
+  <main id="main">
     <!-- VALUE / FEATURES -->
     <section class="section">
       <div class="section__intro">
         <h2>Що робить HostGPT</h2>
-        <p class="muted">Лаконічно — головне про бота.</p>
+        <p class="muted">Лаконічно — головне про бота‑помічника (AI агент, AI консʼєрж, чат‑бот для нерухомості).</p>
       </div>
       <div class="grid grid--4">
         <article class="card">
-          <h3>Миттєві відповіді</h3>
-          <p>Популярні питання: Wi-Fi, check-in/out, паркування, інструкції.</p>
+          <h3>Миттєві відповіді 24/7</h3>
+          <p>Wi‑Fi, check‑in/out, паркування, інструкції до техніки, правила — без очікувань.</p>
         </article>
         <article class="card">
-          <h3>Deep-link для гостей</h3>
-          <p>Гість відкриває бот з вашим посиланням і одразу ставить питання.</p>
+          <h3>Deep‑link на об’єкт</h3>
+          <p>Гість відкриває бот за вашим посиланням і одразу ставить запитання саме про цей об’єкт.</p>
         </article>
         <article class="card">
           <h3>Inbox для власника</h3>
-          <p>Складні запити потрапляють у вхідні — відповідаєте в пару кліків.</p>
+          <p>Складні або нетипові запити приходять вам у Telegram — відповідаєте у два кліки.</p>
         </article>
         <article class="card">
-          <h3>База знань</h3>
-          <p>Q&A зберігаються за об’єктом. Відповіді стають точнішими з часом.</p>
+          <h3>Самонавчальна база знань</h3>
+          <p>Питання/відповіді зберігаються за об’єктом, тому точність росте з кожним діалогом.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PAINS & GAINS -->
+    <section class="section section--alt">
+      <div class="section__intro">
+        <h2>Як HostGPT знімає болі орендодавців</h2>
+        <p class="muted">Менше рутини — більше часу на бізнес.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Менше повторних питань</h3>
+          <p>Гості часто питають одне й те саме. Бот відповідає миттєво і стабільно, не відволікаючи вас.</p>
+        </article>
+        <article class="card">
+          <h3>Краще SLA і задоволеність</h3>
+          <p>Швидка відповідь у будь‑який час → менше стресу для гостя та вищі оцінки.</p>
+        </article>
+        <article class="card">
+          <h3>Контроль складних кейсів</h3>
+          <p>Нетипові звернення не губляться: приходять у ваш Inbox, де ви даєте персональну відповідь.</p>
         </article>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section section--alt" id="how">
+    <section class="section" id="how">
       <div class="section__intro">
         <h2>Як це працює</h2>
       </div>
-      <div class="timeline" aria-label="Кроки запуску">
-        <article class="timeline__item">
+      <ol class="timeline" aria-label="Кроки запуску">
+        <li class="timeline__item">
           <div class="timeline__step">1</div>
           <div class="timeline__content">
             <h3>Створіть об’єкт</h3>
-            <p>У боті додайте назву, адресу та базову інформацію.</p>
+            <p>Додайте назву, адресу та базову інформацію в боті.</p>
           </div>
-        </article>
-        <article class="timeline__item">
+        </li>
+        <li class="timeline__item">
           <div class="timeline__step">2</div>
           <div class="timeline__content">
             <h3>Поділіться лінком</h3>
-            <p>Надішліть гостю deep-link на об’єкт для швидкого старту.</p>
+            <p>Надішліть гостю deep‑link на об’єкт для швидкого старту.</p>
           </div>
-        </article>
-        <article class="timeline__item">
+        </li>
+        <li class="timeline__item">
           <div class="timeline__step">3</div>
           <div class="timeline__content">
             <h3>Отримуйте питання</h3>
-            <p>Бот відповідає на типові; інші — у вашому Inbox у Telegram.</p>
+            <p>Типові відповідає бот, інші — у вашому Inbox у Telegram.</p>
           </div>
-        </article>
-      </div>
+        </li>
+      </ol>
 
       <p class="center" style="margin-top:2rem">
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener">Відкрити @host_gpt_bot</a>
+        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Відкрити @host_gpt_bot</a>
       </p>
+    </section>
+
+    <!-- FAQ (visible copy to match FAQPage schema) -->
+    <section class="section section--alt" id="faq">
+      <div class="section__intro">
+        <h2>Часті запитання</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Чи безкоштовний HostGPT?</summary>
+          <p>Так, HostGPT безкоштовний поки що. Пізніше можуть з’явитися платні плани з розширеними можливостями.</p>
+        </details>
+        <details>
+          <summary>Що таке AI агент‑консьєрж у Telegram?</summary>
+          <p>Це бот‑помічник, який автоматизує відповіді гостям 24/7 і передає складні звернення вам як повідомлення.</p>
+        </details>
+        <details>
+          <summary>Чи можна підключити кілька об’єктів?</summary>
+          <p>Так, додавайте необмежену кількість об’єктів і діліться окремими deep‑link.</p>
+        </details>
+        <details>
+          <summary>Які питання бот покриває?</summary>
+          <p>Wi‑Fi, інструкції, правила будинку, паркування, заселення/виїзд та інші часті запити.</p>
+        </details>
+      </div>
     </section>
   </main>
 
@@ -129,17 +240,24 @@
       <h2>Почати просто</h2>
       <p class="muted">Відкрийте бота та створіть свій перший об’єкт.</p>
       <p>
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener">Запустити у Telegram</a>
+        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Запустити у Telegram</a>
       </p>
-      <p class="footer__note">Контакт: <a href="https://t.me/host_gpt_bot" target="_blank" rel="noopener">@host_gpt_bot</a></p>
+      <p class="footer__note">Контакт: <a href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">@host_gpt_bot</a></p>
     </div>
-    <nav class="footer__nav" aria-label="Навігація">
+    <nav class="footer__nav" aria-label="Навігація футера">
       <a href="#top">Вгору</a>
       <a href="#how">Як це працює</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <p class="footer__copyright">© <span id="y"></span> HostGPT.</p>
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    // Enhance details/summary keyboard focus
+    document.querySelectorAll('details').forEach(d => {
+      d.addEventListener('keyup', e => { if (e.key === 'Enter' || e.key === ' ') d.open = !d.open; });
+    });
+  </script>
 </body>
 </html>
