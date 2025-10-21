@@ -10,7 +10,7 @@
   <link rel="alternate" href="https://hostgpt.org/" hreflang="uk-UA" />
   <meta name="theme-color" content="#0ea5e9" />
 
-  <!-- Preload critical assets -->
+  <!-- Preload & fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -36,7 +36,7 @@
   <meta name="twitter:description" content="Миттєві відповіді гостям у Telegram. Deep-link, Inbox, база знань." />
   <meta name="twitter:image" content="https://hostgpt.org/hero.png" />
 
-  <!-- JSON-LD: WebSite + FAQPage (без вигаданих тверджень) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,7 +61,7 @@
       "name": "Що таке HostGPT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Це бот-помічник у Telegram для автоматизації відповідей гостям на типові питання (Wi-Fi, інструкції, заселення/виїзд), а складні звернення надсилає власнику у вигляді повідомлень (Inbox)."
+        "text": "Це бот-помічник у Telegram для автоматизації відповідей гостям на типові питання (Wi-Fi, інструкції, заселення/виїзд); складні звернення надсилає власнику у вигляді повідомлень (Inbox)."
       }
     },{
       "@type": "Question",
@@ -89,108 +89,44 @@
       </div>
     </div>
     <figure class="hero__media" role="presentation" aria-hidden="true">
-      <img src="/hero.png" alt="HostGPT — AI-агент у Telegram" width="768" height="768" loading="lazy" decoding="async">
+      <!-- важливо: обмежили розмір через sizes + CSS -->
+      <img
+        src="/hero.png"
+        srcset="/hero.png 768w"
+        sizes="(max-width: 640px) 70vw, (max-width: 980px) 420px, 520px"
+        alt="HostGPT — AI-агент у Telegram"
+        width="768" height="768"
+        loading="lazy" decoding="async">
     </figure>
   </header>
 
   <main id="main">
-    <!-- VALUE / FEATURES -->
     <section class="section">
       <div class="section__intro">
         <h2>Що робить HostGPT</h2>
-        <p class="muted">Головне про бота-помічника (AI агент, AI консʼєрж, чат-бот для нерухомості).</p>
+        <p class="muted">Головне про бота-помічника.</p>
       </div>
       <div class="grid grid--4">
-        <article class="card">
-          <h3>Миттєві відповіді 24/7</h3>
-          <p>Wi-Fi, check-in/out, паркування, інструкції до техніки, правила — без очікувань.</p>
-        </article>
-        <article class="card">
-          <h3>Deep-link на об’єкт</h3>
-          <p>Гість відкриває бот за вашим посиланням і одразу ставить запитання саме про цей об’єкт.</p>
-        </article>
-        <article class="card">
-          <h3>Inbox для власника</h3>
-          <p>Складні або нетипові запити приходять вам у Telegram — відповідаєте у два кліки.</p>
-        </article>
-        <article class="card">
-          <h3>Самонавчальна база знань</h3>
-          <p>Питання/відповіді зберігаються за об’єктом, тому точність росте з кожним діалогом.</p>
-        </article>
+        <article class="card"><h3>Миттєві відповіді 24/7</h3><p>Wi-Fi, check-in/out, паркування, інструкції до техніки, правила.</p></article>
+        <article class="card"><h3>Deep-link на об’єкт</h3><p>Гість відкриває бот за вашим посиланням і ставить запитання саме про цей об’єкт.</p></article>
+        <article class="card"><h3>Inbox для власника</h3><p>Складні або нетипові запити приходять у Telegram — відповідаєте у два кліки.</p></article>
+        <article class="card"><h3>База знань</h3><p>Питання/відповіді зберігаються за об’єктом — точність росте з часом.</p></article>
       </div>
     </section>
 
-    <!-- PAINS & GAINS -->
     <section class="section section--alt">
-      <div class="section__intro">
-        <h2>Як HostGPT знімає болі орендодавців</h2>
-        <p class="muted">Менше рутини — більше часу на бізнес.</p>
-      </div>
-      <div class="grid grid--3">
-        <article class="card">
-          <h3>Менше повторних питань</h3>
-          <p>Гості часто питають одне й те саме. Бот відповідає миттєво і стабільно, не відволікаючи вас.</p>
-        </article>
-        <article class="card">
-          <h3>Краще SLA і задоволеність</h3>
-          <p>Швидка відповідь у будь-який час → менше стресу для гостя та вищі оцінки.</p>
-        </article>
-        <article class="card">
-          <h3>Контроль складних кейсів</h3>
-          <p>Нетипові звернення не губляться: приходять у ваш Inbox, де ви даєте персональну відповідь.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" id="how">
       <div class="section__intro">
         <h2>Як це працює</h2>
       </div>
       <ol class="timeline" aria-label="Кроки запуску">
-        <li class="timeline__item">
-          <div class="timeline__step">1</div>
-          <div class="timeline__content">
-            <h3>Створіть об’єкт</h3>
-            <p>Додайте назву, адресу та базову інформацію в боті.</p>
-          </div>
-        </li>
-        <li class="timeline__item">
-          <div class="timeline__step">2</div>
-          <div class="timeline__content">
-            <h3>Поділіться лінком</h3>
-            <p>Надішліть гостю deep-link на об’єкт для швидкого старту.</p>
-          </div>
-        </li>
-        <li class="timeline__item">
-          <div class="timeline__step">3</div>
-          <div class="timeline__content">
-            <h3>Отримуйте питання</h3>
-            <p>Типові відповідає бот, інші — у вашому Inbox у Telegram.</p>
-          </div>
-        </li>
+        <li class="timeline__item"><div class="timeline__step">1</div><div class="timeline__content"><h3>Створіть об’єкт</h3><p>Додайте назву, адресу та базову інформацію в боті.</p></div></li>
+        <li class="timeline__item"><div class="timeline__step">2</div><div class="timeline__content"><h3>Поділіться лінком</h3><p>Надішліть гостю deep-link на об’єкт для швидкого старту.</p></div></li>
+        <li class="timeline__item"><div class="timeline__step">3</div><div class="timeline__content"><h3>Отримуйте питання</h3><p>Типові відповідає бот, інші — у вашому Inbox у Telegram.</p></div></li>
       </ol>
 
       <p class="center" style="margin-top:2rem">
         <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Відкрити @host_gpt_bot</a>
       </p>
-    </section>
-
-    <!-- FAQ (відповідає FAQPage schema) -->
-    <section class="section section--alt" id="faq">
-      <div class="section__intro">
-        <h2>Часті запитання</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Що таке HostGPT?</summary>
-          <p>Це бот-помічник у Telegram для автоматизації відповідей гостям і передачі складних звернень власнику.</p>
-        </details>
-        <details>
-          <summary>Чи можна підключити кілька об’єктів?</summary>
-          <p>Так, додавайте необмежену кількість об’єктів і діліться окремими deep-link.</p>
-        </details>
-      </div>
     </section>
   </main>
 
@@ -198,25 +134,16 @@
     <div class="footer__content">
       <h2>Почати просто</h2>
       <p class="muted">Відкрийте бота та створіть свій перший об’єкт.</p>
-      <p>
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Запустити у Telegram</a>
-      </p>
+      <p><a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Запустити у Telegram</a></p>
       <p class="footer__note">Контакт: <a href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">@host_gpt_bot</a></p>
     </div>
     <nav class="footer__nav" aria-label="Навігація футера">
       <a href="#top">Вгору</a>
-      <a href="#how">Як це працює</a>
-      <a href="#faq">FAQ</a>
+      <a href="#main">До контенту</a>
     </nav>
     <p class="footer__copyright">© <span id="y"></span> HostGPT.</p>
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script>
-    // Покращення доступності для details/summary з клавіатури
-    document.querySelectorAll('details').forEach(d => {
-      d.addEventListener('keyup', e => { if (e.key === 'Enter' || e.key === ' ') d.open = !d.open; });
-    });
-  </script>
 </body>
 </html>
