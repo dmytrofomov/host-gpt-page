@@ -13,7 +13,7 @@
     };
   </script>
   <title>PlanEat у Telegram — лог їжі, план і покупки</title>
-  <meta name="description" content="PlanEat у Telegram — closed beta. Швидко логай їжу (текст, фото, голос), збирай план із своїх рецептів і список покупок. Не лікар і не PlanEat AI з App Store.">
+  <meta name="description" content="PlanEat у Telegram — closed beta. Швидко логай їжу (текст, фото, голос), збирай план із своїх рецептів і список покупок.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0d1f18">
   <meta name="color-scheme" content="dark">
@@ -63,7 +63,7 @@
         "inLanguage": "uk",
         "url": "https://hostgpt.org/",
         "image": "https://hostgpt.org/logo.png",
-        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta. Не медична порада і не PlanEat AI з App Store.",
+        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -74,14 +74,7 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Це той самий PlanEat AI з App Store?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ні. Це окремий Telegram-бот PlanEat у Telegram. Не пов’язано з iOS-додатком PlanEat AI."
-            }
-          },
+          
           {
             "@type": "Question",
             "name": "Це медична або дієтологічна порада?",
@@ -97,15 +90,7 @@
               "@type": "Answer",
               "text": "Ні. У closed beta немає live-імпорту з Instagram, TikTok чи YouTube."
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Що з приватністю?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Сирий текст їжі, промпти, Telegram-айді та фото не йдуть у телеметрію. Є експорт і видалення даних."
-            }
-          }
+          }}
         ]
       }
     ]
@@ -127,7 +112,6 @@
       <nav class="nav" aria-label="Навігація">
         <a href="#umie">Що вміє</a>
         <a href="#ne-e">Чим не є</a>
-        <a href="#privacy">Приватність</a>
       </nav>
       <a class="btn btn-sm" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">Відкрити бота</a>
     </div>
@@ -230,10 +214,6 @@
             Не лікар, не діагноз, не план лікування. КБЖВ — орієнтир, не призначення.
           </li>
           <li>
-            <strong>Не PlanEat AI (iOS).</strong>
-            Не додаток з App Store і не його вебверсія. Окремий Telegram-бот.
-          </li>
-          <li>
             <strong>Не live-імпорт з Instagram / TikTok.</strong>
             У цій beta цього немає. Рецепти додаєш сам.
           </li>
@@ -245,24 +225,10 @@
       </div>
     </section>
 
-    <section class="section" id="privacy" aria-labelledby="priv-title">
-      <div class="wrap privacy">
-        <h2 id="priv-title">Приватність коротко</h2>
-        <p>
-          Сирий текст їжі, промпти, Telegram-айді та фото <strong>не йдуть у телеметрію</strong>.
-          Фото потрібне лише щоб оцінити порцію; після оцінки його не тримаємо як архів.
-        </p>
-      </div>
-    </section>
-
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <h2 id="faq-title">Короткі питання</h2>
         <div class="faq">
-          <details>
-            <summary>Це PlanEat AI з App Store?</summary>
-            <p>Ні. <span data-site="brandLong">PlanEat у Telegram</span> — окремий бот. Не пов’язано з iOS-додатком PlanEat AI.</p>
-          </details>
           <details>
             <summary>Скільки це коштує?</summary>
             <p>Closed beta. Немає публічного прайса і немає вигаданих «тарифів на лендінгу». Доступ — через бота в Telegram.</p>
@@ -295,7 +261,6 @@
       <p>
         <span data-site="brandLong">PlanEat у Telegram</span>
         · не медична порада
-        · не пов’язано з PlanEat AI (iOS)
       </p>
       <p class="footer-meta">
         Бот
