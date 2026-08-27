@@ -15,8 +15,8 @@
   <title>PlanEat у Telegram — лог їжі, план і покупки</title>
   <meta name="description" content="PlanEat у Telegram — closed beta. Швидко логай їжу (текст, фото, голос), збирай план із своїх рецептів і список покупок.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0d1f18">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f6f0e6">
+  <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://hostgpt.org/">
   <link rel="icon" href="logo.png" type="image/png" sizes="640x640">
   <link rel="apple-touch-icon" href="logo.png">
@@ -39,7 +39,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json" id="jsonld">
@@ -63,7 +63,7 @@
         "inLanguage": "uk",
         "url": "https://hostgpt.org/",
         "image": "https://hostgpt.org/logo.png",
-        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta.",
+        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta. Не медична порада.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -74,7 +74,6 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          
           {
             "@type": "Question",
             "name": "Це медична або дієтологічна порада?",
@@ -90,7 +89,15 @@
               "@type": "Answer",
               "text": "Ні. У closed beta немає live-імпорту з Instagram, TikTok чи YouTube."
             }
-          }}
+          },
+          {
+            "@type": "Question",
+            "name": "Чи треба ставити додаток?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ні. Працює в Telegram."
+            }
+          }
         ]
       }
     ]
@@ -103,13 +110,14 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" data-site="domain" data-site-attr="href">
-        <img src="logo.png" alt="" width="40" height="40">
+        <img src="logo.png" alt="" width="36" height="36">
         <span>
           <strong data-site="brand">PlanEat</strong>
           <small>у Telegram · beta</small>
         </span>
       </a>
       <nav class="nav" aria-label="Навігація">
+        <a href="#yak">Як працює</a>
         <a href="#umie">Що вміє</a>
         <a href="#ne-e">Чим не є</a>
       </nav>
@@ -121,117 +129,151 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Closed beta</p>
-          <h1>Швидко лог їжі, план із своїх рецептів і шопінг — у Telegram</h1>
+          <p class="eyebrow">Closed beta</p>
+          <h1>Лог їжі, план із своїх рецептів і покупки — у Telegram</h1>
           <p class="lead">
-            <span data-site="brandLong">PlanEat у Telegram</span> для людей, які вже готують і їдять.
-            Легкий цикл у звичному чаті: записав → запланував → купив → з’їв.
-            Без нового додатка і без медичних обіцянок.
+            <span data-site="brandLong">PlanEat у Telegram</span> для тих, хто вже готує й їсть.
+            Записав → запланував → купив → з’їв. Без нового додатка.
           </p>
           <div class="cta-row">
             <a class="btn" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
               Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
             </a>
-            <a class="btn btn-ghost" href="#umie">Що є в beta</a>
+            <a class="link-ghost" href="#umie">Що є в beta</a>
           </div>
           <p class="fine">Оцінка КБЖВ приблизна. Ти підтверджуєш, правиш або скасовуєш кожен запис.</p>
         </div>
-        <figure class="hero-mark">
-          <div class="glow" aria-hidden="true"></div>
-          <img src="logo.png" alt="Піксельна миска з галочкою — логотип PlanEat" width="640" height="640">
-          <figcaption>
-            Один чат: лог · план · покупки
-          </figcaption>
+
+        <figure class="hero-phone">
+          <div class="phone">
+            <div class="phone-bar">
+              <span class="phone-time">14:02</span>
+              <span class="phone-title" data-site="brand">PlanEat</span>
+              <span class="phone-sigs" aria-hidden="true"></span>
+            </div>
+            <div class="chat" role="group" aria-label="Приклад чату в Telegram">
+              <div class="bubble out">
+                <p>борщ + хліб</p>
+                <time>14:02</time>
+              </div>
+              <div class="bubble in">
+                <p class="bubble-kicker">Приблизно</p>
+                <div class="macros">
+                  <span><strong>420</strong> ккал</span>
+                  <span><strong>18</strong> б</span>
+                  <span><strong>14</strong> ж</span>
+                  <span><strong>52</strong> в</span>
+                </div>
+                <div class="chips">
+                  <span class="chip chip-yes">Підтвердити</span>
+                  <span class="chip">Правити</span>
+                  <span class="chip">Скасувати</span>
+                </div>
+                <time>14:02</time>
+              </div>
+              <div class="bubble out">
+                <p>зроби план на тиждень з моїх рецептів</p>
+                <time>14:03</time>
+              </div>
+              <div class="bubble in">
+                <p>Готово. Тиждень з того, що ти готуєш. Далі — список покупок.</p>
+                <time>14:03</time>
+              </div>
+            </div>
+            <div class="composer" aria-hidden="true">
+              <span>Повідомлення</span>
+            </div>
+          </div>
+          <figcaption>Один чат: лог · план · покупки</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="section" id="yak" aria-labelledby="yak-title">
       <div class="wrap">
-        <h2 id="yak-title">Як працює за пів хвилини</h2>
+        <h2 id="yak-title">Як працює</h2>
         <ol class="steps">
           <li>
             <span class="step-n">1</span>
-            <div>
-              <h3>Кидаєш, що з’їв</h3>
-              <p>Текст на кшталт «борщ + хліб», фото тарілки або голосове.</p>
-            </div>
+            <h3>Кидаєш, що з’їв</h3>
+            <p>Текст на кшталт «борщ + хліб», фото тарілки або голосове.</p>
           </li>
           <li>
             <span class="step-n">2</span>
-            <div>
-              <h3>Дивишся приблизну КБЖВ</h3>
-              <p>Бот пропонує чернетку. Confirm, correct або cancel — без автозапису «в темну».</p>
-            </div>
+            <h3>Дивишся приблизну КБЖВ</h3>
+            <p>Бот дає чернетку. Ти підтверджуєш, правиш або скасовуєш.</p>
           </li>
           <li>
             <span class="step-n">3</span>
-            <div>
-              <h3>План із <em>своїх</em> рецептів</h3>
-              <p>Додаєш свої страви — бот збирає план і список покупок. З’їв, відмічаєш.</p>
-            </div>
+            <h3>План із <em>своїх</em> рецептів</h3>
+            <p>Тиждень з того, що готуєш. Потім список покупок і позначка «з’їв».</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section" id="umie" aria-labelledby="umie-title">
+    <section class="section split-section" aria-labelledby="umie-title">
       <div class="wrap">
-        <h2 id="umie-title">Що є в closed beta</h2>
-        <p class="section-lead">Вузький робочий контур. Обіцяємо лише те, що вже можна натиснути в боті.</p>
-        <ul class="cards">
-          <li>
-            <h3>Лог їжі</h3>
-            <p>Текст, фото або голос → приблизна КБЖВ → підтвердження. Не магія: чернетка, яку ти приймаєш.</p>
-          </li>
-          <li>
-            <h3>День і цілі</h3>
-            <p>Сьогодні, орієнтири і що вже записано. Без таблиць і без окремого додатка.</p>
-          </li>
-          <li>
-            <h3>Рецепти</h3>
-            <p>Свої страви в боті. План будується з того, що ти реально готуєш, а не з чужого меню.</p>
-          </li>
-          <li>
-            <h3>План і покупки</h3>
-            <p>План на тиждень із твоїх страв, список у магазин і позначка «я це з’їв».</p>
-          </li>
-          <li>
-            <h3>Експорт і видалення</h3>
-            <p>Дані можна забрати або стерти. Без окремого кабінету.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="ne-e" aria-labelledby="ne-title">
-      <div class="wrap">
-        <h2 id="ne-title">Чим це не є</h2>
-        <p class="section-lead">Краще сказати одразу, ніж ловити «а де імпорт з тіктоку».</p>
-        <ul class="not-list">
-          <li>
-            <strong>Не медицина.</strong>
-            Не лікар, не діагноз, не план лікування. КБЖВ — орієнтир, не призначення.
-          </li>
-          <li>
-            <strong>Не live-імпорт з Instagram / TikTok.</strong>
-            У цій beta цього немає. Рецепти додаєш сам.
-          </li>
-          <li>
-            <strong>Не AI-дієтолог.</strong>
-            Немає вільного «поспілкуйся з мережею про дієту» і немає AI meal planner.
-          </li>
-        </ul>
+        <div class="split">
+          <div id="umie">
+            <h2 id="umie-title">Що є в beta</h2>
+            <p class="section-lead">Лише те, що вже працює в боті.</p>
+            <ul class="feat">
+              <li>
+                <strong>Лог їжі</strong>
+                Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш.
+              </li>
+              <li>
+                <strong>День і цілі</strong>
+                Сьогодні, орієнтири і що вже записано.
+              </li>
+              <li>
+                <strong>Свої рецепти</strong>
+                План з того, що ти реально готуєш, не з чужого меню.
+              </li>
+              <li>
+                <strong>План і покупки</strong>
+                Тиждень, список, позначка «я це з’їв».
+              </li>
+              <li>
+                <strong>Експорт і видалення</strong>
+                Дані можна забрати або стерти.
+              </li>
+            </ul>
+          </div>
+          <div id="ne-e">
+            <h2 id="ne-title">Чим не є</h2>
+            <p class="section-lead">Щоб не обіцяти зайвого.</p>
+            <ul class="not-list">
+              <li>
+                <strong>Не медицина.</strong>
+                Не лікар і не план лікування. КБЖВ — орієнтир.
+              </li>
+              <li>
+                <strong>Не імпорт з Instagram / TikTok.</strong>
+                У цій beta цього немає. Рецепти додаєш сам.
+              </li>
+              <li>
+                <strong>Не AI-дієтолог.</strong>
+                Немає чату «про дієту» і немає AI meal planner.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="wrap">
+      <div class="wrap narrow">
         <h2 id="faq-title">Короткі питання</h2>
         <div class="faq">
           <details>
+            <summary>Це медична порада?</summary>
+            <p>Ні. Бот не лікар і не AI-дієтолог. Оцінка КБЖВ приблизна — ти підтверджуєш запис.</p>
+          </details>
+          <details>
             <summary>Скільки це коштує?</summary>
-            <p>Closed beta. Немає публічного прайса і немає вигаданих «тарифів на лендінгу». Доступ — через бота в Telegram.</p>
+            <p>Closed beta. Немає публічного прайса. Доступ — через бота в Telegram.</p>
           </details>
           <details>
             <summary>Чи треба ставити додаток?</summary>
@@ -239,17 +281,17 @@
           </details>
           <details>
             <summary>Що просимо від бети?</summary>
-            <p>Кілька логів їжі, один план зі своїми рецептами і короткий фідбек: що зламалось або чого не вистачає. Набір поки закритий.</p>
+            <p>Кілька логів їжі, один тижневий план зі своїми рецептами і короткий фідбек: що зламалось або чого не вистачає.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="section cta-band" aria-labelledby="cta-title">
+    <section class="cta-band" aria-labelledby="cta-title">
       <div class="wrap cta-band-inner">
         <h2 id="cta-title">Спробувати в Telegram</h2>
-        <p>Closed beta. Чесний вузький скоуп. Якщо підходить цикл «лог + свої рецепти + покупки» — заходь у бота.</p>
-        <a class="btn btn-lg" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
+        <p>Closed beta. Якщо підходить цикл «лог + свої рецепти + покупки» — заходь у бота.</p>
+        <a class="btn btn-on-forest" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
           Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
         </a>
       </div>
