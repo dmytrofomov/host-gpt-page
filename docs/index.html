@@ -1,149 +1,361 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    window.SITE = {
+      brand: "PlanEat",
+      brandLong: "PlanEat у Telegram",
+      domain: "https://hostgpt.org/",
+      botUrl: "https://t.me/plan_eat_ai_bot",
+      botHandle: "@plan_eat_ai_bot"
+    };
+  </script>
+  <title>PlanEat у Telegram — лог їжі, план і покупки</title>
+  <meta name="description" content="PlanEat у Telegram — closed beta. Швидко логай їжу (текст, фото, голос), збирай план із своїх рецептів і список покупок. Не лікар і не PlanEat AI з App Store.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0d1f18">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://hostgpt.org/">
+  <link rel="icon" href="logo.png" type="image/png" sizes="640x640">
+  <link rel="apple-touch-icon" href="logo.png">
 
-  <title>HostGPT — AI агент-консьєрж у Telegram для орендодавців і гостей</title>
-  <meta name="description" content="HostGPT — AI агент у Telegram для туристичної нерухомості. Миттєві відповіді 24/7 на часті питання гостей, deep-link на об’єкт, Inbox для складних запитів, база знань." />
-  <link rel="canonical" href="https://hostgpt.org/" />
-  <link rel="alternate" href="https://hostgpt.org/" hreflang="uk-UA" />
-  <meta name="theme-color" content="#0ea5e9" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="PlanEat у Telegram">
+  <meta property="og:title" content="PlanEat у Telegram — лог їжі, план і покупки">
+  <meta property="og:description" content="Closed beta в Telegram: швидко лог їжі, план із своїх рецептів і шопінг. Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш.">
+  <meta property="og:url" content="https://hostgpt.org/">
+  <meta property="og:image" content="https://hostgpt.org/logo.png">
+  <meta property="og:image:alt" content="Піксельна миска з галочкою — логотип PlanEat у Telegram">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="640">
 
-  <!-- Preload & fonts -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PlanEat у Telegram — лог їжі, план і покупки">
+  <meta name="twitter:description" content="Closed beta: лог їжі + план із своїх рецептів + шопінг у Telegram.">
+  <meta name="twitter:image" content="https://hostgpt.org/logo.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="preload" as="image" href="/hero.png" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/hero.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- Robots -->
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="HostGPT" />
-  <meta property="og:title" content="HostGPT — AI агент-консьєрж у Telegram для орендодавців і гостей" />
-  <meta property="og:description" content="Відповіді гостям 24/7. Deep-link на об’єкт, Inbox для власника, база знань." />
-  <meta property="og:url" content="https://hostgpt.org/" />
-  <meta property="og:image" content="https://hostgpt.org/hero.png" />
-  <meta property="og:locale" content="uk_UA" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HostGPT — AI агент-консьєрж у Telegram" />
-  <meta name="twitter:description" content="Миттєві відповіді гостям у Telegram. Deep-link, Inbox, база знань." />
-  <meta name="twitter:image" content="https://hostgpt.org/hero.png" />
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="jsonld">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "HostGPT",
-    "url": "https://hostgpt.org/",
-    "inLanguage": "uk-UA",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://t.me/host_gpt_bot",
-      "query-input": "required name=query"
-    },
-    "sameAs": ["https://t.me/host_gpt_bot"]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Що таке HostGPT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Це бот-помічник у Telegram для автоматизації відповідей гостям на типові питання (Wi-Fi, інструкції, заселення/виїзд); складні звернення надсилає власнику у вигляді повідомлень (Inbox)."
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "PlanEat у Telegram",
+        "alternateName": "PlanEat",
+        "url": "https://hostgpt.org/",
+        "inLanguage": "uk",
+        "description": "Closed beta Telegram-бота: лог їжі, план із своїх рецептів і список покупок."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "PlanEat у Telegram",
+        "alternateName": "PlanEat",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Telegram",
+        "inLanguage": "uk",
+        "url": "https://hostgpt.org/",
+        "image": "https://hostgpt.org/logo.png",
+        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta. Не медична порада і не PlanEat AI з App Store.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "sameAs": ["https://t.me/plan_eat_ai_bot"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Це той самий PlanEat AI з App Store?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ні. Це окремий Telegram-бот PlanEat у Telegram. Не пов’язано з iOS-додатком PlanEat AI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Це медична або дієтологічна порада?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ні. Бот не лікар і не AI-дієтолог. Оцінка КБЖВ приблизна, ти сам підтверджуєш запис."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чи є імпорт з Instagram або TikTok?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ні. У closed beta немає live-імпорту з Instagram, TikTok чи YouTube."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Що з приватністю?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сирий текст їжі, промпти, Telegram-айді та фото не йдуть у телеметрію. Є експорт і видалення даних."
+            }
+          }
+        ]
       }
-    },{
-      "@type": "Question",
-      "name": "Чи можна підключити кілька об’єктів?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Так. Додавайте кожен об’єкт окремо і діліться його deep-link із гостями."
-      }
-    }]
+    ]
   }
   </script>
 </head>
 <body>
-  <!-- HERO -->
-  <header class="hero" id="top" role="banner">
-    <div class="hero__content">
-      <p class="hero__badge">AI агент у Telegram</p>
-      <h1>HostGPT — AI агент-консьєрж для орендодавців</h1>
-      <p class="hero__lead">
-        Миттєві відповіді 24/7 на часті питання гостей. Deep-link на об’єкт у один клік, складні запити — у ваш Inbox.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer" aria-label="Відкрити HostGPT у Telegram">@host_gpt_bot</a>
-        <a class="btn btn--ghost" href="tg://resolve?domain=host_gpt_bot" aria-label="Відкрити у застосунку Telegram">Відкрити у застосунку</a>
-      </div>
+  <a class="skip" href="#main">До змісту</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" data-site="domain" data-site-attr="href">
+        <img src="logo.png" alt="" width="40" height="40">
+        <span>
+          <strong data-site="brand">PlanEat</strong>
+          <small>у Telegram · beta</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Навігація">
+        <a href="#umie">Що вміє</a>
+        <a href="#ne-e">Чим не є</a>
+        <a href="#privacy">Приватність</a>
+      </nav>
+      <a class="btn btn-sm" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">Відкрити бота</a>
     </div>
-    <figure class="hero__media" role="presentation" aria-hidden="true">
-      <!-- важливо: обмежили розмір через sizes + CSS -->
-      <img
-        src="/hero.png"
-        srcset="/hero.png 768w"
-        sizes="(max-width: 640px) 70vw, (max-width: 980px) 420px, 520px"
-        alt="HostGPT — AI-агент у Telegram"
-        width="768" height="768"
-        loading="lazy" decoding="async">
-    </figure>
   </header>
 
   <main id="main">
-    <section class="section">
-      <div class="section__intro">
-        <h2>Що робить HostGPT</h2>
-        <p class="muted">Головне про бота-помічника.</p>
-      </div>
-      <div class="grid grid--4">
-        <article class="card"><h3>Миттєві відповіді 24/7</h3><p>Wi-Fi, check-in/out, паркування, інструкції до техніки, правила.</p></article>
-        <article class="card"><h3>Deep-link на об’єкт</h3><p>Гість відкриває бот за вашим посиланням і ставить запитання саме про цей об’єкт.</p></article>
-        <article class="card"><h3>Inbox для власника</h3><p>Складні або нетипові запити приходять у Telegram — відповідаєте у два кліки.</p></article>
-        <article class="card"><h3>База знань</h3><p>Питання/відповіді зберігаються за об’єктом — точність росте з часом.</p></article>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Closed beta</p>
+          <h1>Швидко лог їжі, план із своїх рецептів і шопінг — у Telegram</h1>
+          <p class="lead">
+            <span data-site="brandLong">PlanEat у Telegram</span> для людей, які вже готують і їдять.
+            Легкий цикл у звичному чаті: записав → запланував → купив → з’їв.
+            Без нового додатка і без медичних обіцянок.
+          </p>
+          <div class="cta-row">
+            <a class="btn" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
+              Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
+            </a>
+            <a class="btn btn-ghost" href="#umie">Що є в beta</a>
+          </div>
+          <p class="fine">Оцінка КБЖВ приблизна. Ти підтверджуєш, правиш або скасовуєш кожен запис.</p>
+        </div>
+        <figure class="hero-mark">
+          <div class="glow" aria-hidden="true"></div>
+          <img src="logo.png" alt="Піксельна миска з галочкою — логотип PlanEat" width="640" height="640">
+          <figcaption>
+            Один чат: лог · план · покупки
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section section--alt">
-      <div class="section__intro">
-        <h2>Як це працює</h2>
+    <section class="section" id="yak" aria-labelledby="yak-title">
+      <div class="wrap">
+        <h2 id="yak-title">Як працює за пів хвилини</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <div>
+              <h3>Кидаєш, що з’їв</h3>
+              <p>Текст на кшталт «борщ + хліб», фото тарілки або голосове.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <div>
+              <h3>Дивишся приблизну КБЖВ</h3>
+              <p>Бот пропонує чернетку. Confirm, correct або cancel — без автозапису «в темну».</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <div>
+              <h3>План із <em>своїх</em> рецептів</h3>
+              <p>Додаєш страви → <code>/plan</code> → <code>/shopping</code> → коли з’їв — <code>/logplan</code>.</p>
+            </div>
+          </li>
+        </ol>
       </div>
-      <ol class="timeline" aria-label="Кроки запуску">
-        <li class="timeline__item"><div class="timeline__step">1</div><div class="timeline__content"><h3>Створіть об’єкт</h3><p>Додайте назву, адресу та базову інформацію в боті.</p></div></li>
-        <li class="timeline__item"><div class="timeline__step">2</div><div class="timeline__content"><h3>Поділіться лінком</h3><p>Надішліть гостю deep-link на об’єкт для швидкого старту.</p></div></li>
-        <li class="timeline__item"><div class="timeline__step">3</div><div class="timeline__content"><h3>Отримуйте питання</h3><p>Типові відповідає бот, інші — у вашому Inbox у Telegram.</p></div></li>
-      </ol>
+    </section>
 
-      <p class="center" style="margin-top:2rem">
-        <a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Відкрити @host_gpt_bot</a>
-      </p>
+    <section class="section" id="umie" aria-labelledby="umie-title">
+      <div class="wrap">
+        <h2 id="umie-title">Що є в closed beta</h2>
+        <p class="section-lead">Вузький робочий контур. Обіцяємо лише те, що вже можна натиснути в боті.</p>
+        <ul class="cards">
+          <li>
+            <h3>Лог їжі</h3>
+            <p>Текст, фото або голос → приблизна КБЖВ → підтвердження. Не магія: чернетка, яку ти приймаєш.</p>
+          </li>
+          <li>
+            <h3>День і цілі</h3>
+            <p>Команди <code>/day</code>, <code>/goals</code>, <code>/history</code> — сьогодні, орієнтири і що вже записано.</p>
+          </li>
+          <li>
+            <h3>Рецепти</h3>
+            <p>Свої страви в боті. План будується з того, що ти реально готуєш, а не з чужого меню.</p>
+          </li>
+          <li>
+            <h3>План і покупки</h3>
+            <p><code>/plan</code> збирає тиждень, <code>/shopping</code> — список, <code>/logplan</code> — «я це з’їв».</p>
+          </li>
+          <li>
+            <h3>Експорт і видалення</h3>
+            <p>Дані можна забрати або стерти. Privacy-команди в боті, без окремого кабінету.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="ne-e" aria-labelledby="ne-title">
+      <div class="wrap">
+        <h2 id="ne-title">Чим це не є</h2>
+        <p class="section-lead">Краще сказати одразу, ніж ловити «а де імпорт з тіктоку».</p>
+        <ul class="not-list">
+          <li>
+            <strong>Не медицина.</strong>
+            Не лікар, не діагноз, не план лікування. КБЖВ — орієнтир, не призначення.
+          </li>
+          <li>
+            <strong>Не PlanEat AI (iOS).</strong>
+            Не додаток з App Store і не його вебверсія. Окремий Telegram-бот.
+          </li>
+          <li>
+            <strong>Не live-імпорт з Instagram / TikTok.</strong>
+            У цій beta цього немає. Рецепти додаєш сам.
+          </li>
+          <li>
+            <strong>Не AI-дієтолог.</strong>
+            Немає вільного «поспілкуйся з мережею про дієту» і немає AI meal planner.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="privacy" aria-labelledby="priv-title">
+      <div class="wrap privacy">
+        <h2 id="priv-title">Приватність коротко</h2>
+        <p>
+          Сирий текст їжі, промпти, Telegram-айді та фото <strong>не йдуть у телеметрію</strong>.
+          Фото потрібне лише щоб оцінити порцію; після оцінки його не тримаємо як архів.
+        </p>
+        <p>
+          У боті є експорт і повне видалення даних. Якщо шукаєш продукт, який зливає щоденник у аналітику — це не ми.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <h2 id="faq-title">Короткі питання</h2>
+        <div class="faq">
+          <details>
+            <summary>Це PlanEat AI з App Store?</summary>
+            <p>Ні. <span data-site="brandLong">PlanEat у Telegram</span> — окремий бот. Не пов’язано з iOS-додатком PlanEat AI.</p>
+          </details>
+          <details>
+            <summary>Скільки це коштує?</summary>
+            <p>Closed beta. Немає публічного прайса і немає вигаданих «тарифів на лендінгу». Доступ — через бота в Telegram.</p>
+          </details>
+          <details>
+            <summary>Чи треба ставити додаток?</summary>
+            <p>Ні. Працює в Telegram: <a data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot"><span data-site="botHandle">@plan_eat_ai_bot</span></a>.</p>
+          </details>
+          <details>
+            <summary>Що просимо від бети?</summary>
+            <p>Кілька логів їжі, один <code>/plan</code> зі своїми рецептами і короткий фідбек: що зламалось або чого не вистачає. Без обіцянок «тисяч користувачів» — набір поки закритий.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="wrap cta-band-inner">
+        <h2 id="cta-title">Спробувати в Telegram</h2>
+        <p>Closed beta. Чесний вузький скоуп. Якщо підходить цикл «лог + свої рецепти + покупки» — заходь у бота.</p>
+        <a class="btn btn-lg" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
+          Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__content">
-      <h2>Почати просто</h2>
-      <p class="muted">Відкрийте бота та створіть свій перший об’єкт.</p>
-      <p><a class="btn btn--primary" href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">Запустити у Telegram</a></p>
-      <p class="footer__note">Контакт: <a href="https://t.me/host_gpt_bot" target="_blank" rel="noopener noreferrer">@host_gpt_bot</a></p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>
+        <span data-site="brandLong">PlanEat у Telegram</span>
+        · не медична порада
+        · не пов’язано з PlanEat AI (iOS)
+      </p>
+      <p class="footer-meta">
+        Бот
+        <a data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot"><span data-site="botHandle">@plan_eat_ai_bot</span></a>
+        · сайт
+        <a data-site="domain" data-site-attr="href" href="https://hostgpt.org/"><span data-site="domain">https://hostgpt.org/</span></a>
+      </p>
     </div>
-    <nav class="footer__nav" aria-label="Навігація футера">
-      <a href="#top">Вгору</a>
-      <a href="#main">До контенту</a>
-    </nav>
-    <p class="footer__copyright">© <span id="y"></span> HostGPT.</p>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    (function (s) {
+      if (!s) return;
+      function origin() {
+        return String(s.domain || "").replace(/\/+$/, "");
+      }
+      function abs(path) {
+        return origin() + (path ? "/" + String(path).replace(/^\/+/, "") : "/");
+      }
+      document.querySelectorAll("[data-site]").forEach(function (el) {
+        var key = el.getAttribute("data-site");
+        var val = s[key];
+        if (val == null || val === "") return;
+        var attr = el.getAttribute("data-site-attr");
+        if (attr) el.setAttribute(attr, val);
+        else el.textContent = val;
+      });
+      var title = s.brandLong + " — лог їжі, план і покупки";
+      document.title = title;
+      var map = [
+        ['meta[property="og:title"]', title],
+        ['meta[property="og:site_name"]', s.brandLong],
+        ['meta[property="og:url"]', abs("")],
+        ['meta[property="og:image"]', abs("logo.png")],
+        ['meta[name="twitter:title"]', title],
+        ['meta[name="twitter:image"]', abs("logo.png")],
+        ['link[rel="canonical"]', abs(""), "href"]
+      ];
+      map.forEach(function (row) {
+        var el = document.querySelector(row[0]);
+        if (!el) return;
+        el.setAttribute(row[2] || "content", row[1]);
+      });
+      var ld = document.getElementById("jsonld");
+      if (!ld) return;
+      try {
+        var data = JSON.parse(ld.textContent);
+        (data["@graph"] || []).forEach(function (node) {
+          if (node.name) node.name = s.brandLong;
+          if (node.alternateName) node.alternateName = s.brand;
+          if (node.url) node.url = abs("");
+          if (node.image) node.image = abs("logo.png");
+          if (node.sameAs) node.sameAs = [s.botUrl];
+        });
+        ld.textContent = JSON.stringify(data);
+      } catch (e) {}
+    })(window.SITE);
+  </script>
 </body>
 </html>
