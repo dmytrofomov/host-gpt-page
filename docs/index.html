@@ -12,10 +12,10 @@
       botHandle: "@plan_eat_ai_bot"
     };
   </script>
-  <title>PlanEat у Telegram — лог їжі, план і покупки</title>
-  <meta name="description" content="PlanEat у Telegram — closed beta. Швидко логай їжу (текст, фото, голос), збирай план із своїх рецептів і список покупок.">
+  <title>PlanEat у Telegram — записав, запланував, купив, з’їв</title>
+  <meta name="description" content="PlanEat у Telegram — closed beta. Лог їжі з тексту, фото чи голосу, тиждень із своїх рецептів і список покупок. Без нового додатка.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#f6f0e6">
+  <meta name="theme-color" content="#12281F">
   <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://hostgpt.org/">
   <link rel="icon" href="logo.png" type="image/png" sizes="640x640">
@@ -24,22 +24,22 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="uk_UA">
   <meta property="og:site_name" content="PlanEat у Telegram">
-  <meta property="og:title" content="PlanEat у Telegram — лог їжі, план і покупки">
-  <meta property="og:description" content="Closed beta в Telegram: швидко лог їжі, план із своїх рецептів і шопінг. Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш.">
+  <meta property="og:title" content="PlanEat у Telegram — записав, запланував, купив, з’їв">
+  <meta property="og:description" content="Closed beta в Telegram: лог їжі, план із своїх рецептів і список у магазин. Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш.">
   <meta property="og:url" content="https://hostgpt.org/">
-  <meta property="og:image" content="https://hostgpt.org/logo.png">
-  <meta property="og:image:alt" content="Піксельна миска з галочкою — логотип PlanEat у Telegram">
-  <meta property="og:image:width" content="640">
-  <meta property="og:image:height" content="640">
+  <meta property="og:image" content="https://hostgpt.org/img/og.jpg">
+  <meta property="og:image:alt" content="Борщ на дерев’яному столі — PlanEat у Telegram">
+  <meta property="og:image:width" content="1376">
+  <meta property="og:image:height" content="768">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="PlanEat у Telegram — лог їжі, план і покупки">
-  <meta name="twitter:description" content="Closed beta: лог їжі + план із своїх рецептів + шопінг у Telegram.">
-  <meta name="twitter:image" content="https://hostgpt.org/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PlanEat у Telegram — записав, запланував, купив, з’їв">
+  <meta name="twitter:description" content="Closed beta: лог їжі + план із своїх рецептів + покупки в Telegram.">
+  <meta name="twitter:image" content="https://hostgpt.org/img/og.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json" id="jsonld">
@@ -62,8 +62,8 @@
         "operatingSystem": "Telegram",
         "inLanguage": "uk",
         "url": "https://hostgpt.org/",
-        "image": "https://hostgpt.org/logo.png",
-        "description": "Telegram-бот для швидкого логу їжі та плану з власних рецептів. Closed beta. Не медична порада.",
+        "image": "https://hostgpt.org/img/og.jpg",
+        "description": "Telegram-бот для логу їжі та плану з власних рецептів. Closed beta. Не медична порада.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -84,10 +84,10 @@
           },
           {
             "@type": "Question",
-            "name": "Чи є імпорт з Instagram або TikTok?",
+            "name": "Скільки це коштує?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ні. У closed beta немає live-імпорту з Instagram, TikTok чи YouTube."
+              "text": "Closed beta. Немає публічного прайса. Доступ — через бота в Telegram."
             }
           },
           {
@@ -96,6 +96,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Ні. Працює в Telegram."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Що просимо від бети?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Кілька логів їжі, один тижневий план зі своїми рецептами і короткий фідбек: що зламалось або чого не вистачає."
             }
           }
         ]
@@ -117,9 +125,10 @@
         </span>
       </a>
       <nav class="nav" aria-label="Навігація">
-        <a href="#yak">Як працює</a>
+        <a href="#cykl">Цикл</a>
+        <a href="#vyglyad">Як виглядає</a>
         <a href="#umie">Що вміє</a>
-        <a href="#ne-e">Чим не є</a>
+        <a href="#faq">Питання</a>
       </nav>
       <a class="btn btn-sm" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">Відкрити бота</a>
     </div>
@@ -127,37 +136,44 @@
 
   <main id="main">
     <section class="hero" id="top">
+      <img class="hero-bg" src="img/hero.jpg" alt="Миска борщу зі сметаною на кухонному столі при вечірньому світлі" width="1376" height="768">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Closed beta</p>
-          <h1>Лог їжі, план із своїх рецептів і покупки — у Telegram</h1>
+          <h1>Записав. Запланував.<br>Купив. З’їв.</h1>
           <p class="lead">
-            <span data-site="brandLong">PlanEat у Telegram</span> для тих, хто вже готує й їсть.
-            Записав → запланував → купив → з’їв. Без нового додатка.
+            <span data-site="brandLong">PlanEat у Telegram</span> — для тих, хто вже готує.
+            Один чат замість щоденника, планувальника і списку в нотатках.
           </p>
           <div class="cta-row">
             <a class="btn" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
-              Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
+              Відкрити бота<span class="btn-handle"> · <span data-site="botHandle">@plan_eat_ai_bot</span></span>
             </a>
-            <a class="link-ghost" href="#umie">Що є в beta</a>
+            <a class="link-ghost" href="#vyglyad">Як це виглядає</a>
           </div>
-          <p class="fine">Оцінка КБЖВ приблизна. Ти підтверджуєш, правиш або скасовуєш кожен запис.</p>
+          <p class="fine">Оцінка КБЖВ приблизна. Нічого не записується, поки ти не підтвердиш.</p>
         </div>
 
         <figure class="hero-phone">
-          <div class="phone">
+          <div class="phone" role="group" aria-label="Приклад чату в Telegram: запис обіду">
             <div class="phone-bar">
-              <span class="phone-time">14:02</span>
-              <span class="phone-title" data-site="brand">PlanEat</span>
+              <img class="phone-ava" src="logo.png" alt="" width="22" height="22">
+              <span>
+                <span class="phone-title" data-site="brand">PlanEat</span>
+                <span class="phone-sub">бот</span>
+              </span>
               <span class="phone-sigs" aria-hidden="true"></span>
             </div>
-            <div class="chat" role="group" aria-label="Приклад чату в Telegram">
-              <div class="bubble out">
-                <p>борщ + хліб</p>
+            <div class="chat">
+              <div class="bubble out photo">
+                <img src="img/hero.jpg" alt="">
+                <p>обід</p>
                 <time>14:02</time>
               </div>
               <div class="bubble in">
-                <p class="bubble-kicker">Приблизно</p>
+                <p class="bubble-kicker">🍽 Чернетка страви (ще не записано)</p>
+                <p class="item">борщ — 400 г · 320 ккал</p>
+                <p class="item">хліб житній — 40 г · 100 ккал</p>
                 <div class="macros">
                   <span><strong>420</strong> ккал</span>
                   <span><strong>18</strong> б</span>
@@ -165,50 +181,206 @@
                   <span><strong>52</strong> в</span>
                 </div>
                 <div class="chips">
-                  <span class="chip chip-yes">Підтвердити</span>
-                  <span class="chip">Правити</span>
-                  <span class="chip">Скасувати</span>
+                  <span class="chip chip-yes">✅ Підтвердити</span>
+                  <span class="chip">✏️ Виправити</span>
+                  <span class="chip">❌ Скасувати</span>
                 </div>
                 <time>14:02</time>
               </div>
-              <div class="bubble out">
-                <p>зроби план на тиждень з моїх рецептів</p>
-                <time>14:03</time>
-              </div>
-              <div class="bubble in">
-                <p>Готово. Тиждень з того, що ти готуєш. Далі — список покупок.</p>
-                <time>14:03</time>
-              </div>
             </div>
             <div class="composer" aria-hidden="true">
-              <span>Повідомлення</span>
+              <span class="composer-plus">+</span>
+              <span class="composer-ph">Повідомлення</span>
+              <span class="composer-send"></span>
             </div>
           </div>
-          <figcaption>Один чат: лог · план · покупки</figcaption>
+          <figcaption>Кинув фото — побачив чернетку. Далі один тап.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section" id="yak" aria-labelledby="yak-title">
+    <section class="section" id="cykl" aria-labelledby="cykl-title">
       <div class="wrap">
-        <h2 id="yak-title">Як працює</h2>
-        <ol class="steps">
+        <p class="eyebrow">Кухня має цикл</p>
+        <h2 id="cykl-title">Бот його тримає</h2>
+        <p class="section-lead">Записав → запланував → купив → з’їв. Кожен крок живе в тому самому чаті, і нічого не стає фактом без твого підтвердження.</p>
+        <ol class="loop">
           <li>
-            <span class="step-n">1</span>
-            <h3>Кидаєш, що з’їв</h3>
-            <p>Текст на кшталт «борщ + хліб», фото тарілки або голосове.</p>
+            <span class="loop-n">01</span>
+            <h3>Записав</h3>
+            <p>Текст, фото тарілки або голосове. Бот збирає чернетку КБЖВ — підтверджуєш, правиш або скасовуєш.</p>
           </li>
           <li>
-            <span class="step-n">2</span>
-            <h3>Дивишся приблизну КБЖВ</h3>
-            <p>Бот дає чернетку. Ти підтверджуєш, правиш або скасовуєш.</p>
+            <span class="loop-n">02</span>
+            <h3>Запланував</h3>
+            <p>Тиждень з того, що ти реально готуєш. План зі збережених рецептів, не з чужого меню і не від AI-дієтолога.</p>
           </li>
           <li>
-            <span class="step-n">3</span>
-            <h3>План із <em>своїх</em> рецептів</h3>
-            <p>Тиждень з того, що готуєш. Потім список покупок і позначка «з’їв».</p>
+            <span class="loop-n">03</span>
+            <h3>Купив</h3>
+            <p>З підтвердженого плану — список у магазин. Відмічаєш, правиш, копіюєш як текст.</p>
+          </li>
+          <li>
+            <span class="loop-n">04</span>
+            <h3>З’їв</h3>
+            <p>Страва з плану повертається в щоденник як нова чернетка. Знову ти кажеш «так».</p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section class="section split-section" id="vhody" aria-labelledby="vhody-title">
+      <div class="wrap">
+        <p class="eyebrow">Без форм</p>
+        <h2 id="vhody-title">Три способи сказати «я з’їв»</h2>
+        <p class="section-lead">Будь-що з цього йде в ту саму чернетку. Далі — один тап.</p>
+        <div class="inputs">
+          <article class="input-card">
+            <p class="input-kicker">Текст</p>
+            <h3>Напиши як є</h3>
+            <p class="input-sample">борщ + хліб</p>
+            <p>Звичайна фраза. Бот розбере продукти й порції і покаже приблизну КБЖВ.</p>
+          </article>
+          <article class="input-card input-card-media">
+            <img src="img/plate.jpg" alt="Сирники зі сметаною на керамічній тарілці" width="1024" height="768">
+            <div>
+              <p class="input-kicker">Фото</p>
+              <h3>Кинь тарілку</h3>
+              <p>Бот впізнає страву на око. Порції — орієнтир, тож чернетку варто глянути.</p>
+            </div>
+          </article>
+          <article class="input-card">
+            <p class="input-kicker">Голос</p>
+            <h3>Наведи на ходу</h3>
+            <div class="wave" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p>Розпізнає сказане і веде тим самим шляхом, що й набраний текст.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vyglyad" aria-labelledby="vyglyad-title">
+      <div class="wrap tour">
+        <div class="tour-copy">
+          <p class="eyebrow">Telegram</p>
+          <h2 id="vyglyad-title">Як це виглядає в чаті</h2>
+          <p class="section-lead">Ті самі картки, що в боті. Жодного нового додатка — лог, день, план і покупки живуть тут.</p>
+        </div>
+
+        <div class="tour-stage">
+          <input class="sr-only" type="radio" name="scene" id="sc-log" checked>
+          <input class="sr-only" type="radio" name="scene" id="sc-day">
+          <input class="sr-only" type="radio" name="scene" id="sc-plan">
+          <input class="sr-only" type="radio" name="scene" id="sc-shop">
+          <div class="scene-tabs" aria-label="Сцени чату">
+            <label for="sc-log">Лог</label>
+            <label for="sc-day">День</label>
+            <label for="sc-plan">План</label>
+            <label for="sc-shop">Покупки</label>
+          </div>
+
+          <div class="phone phone-tour" role="group" aria-label="Приклади карток бота">
+            <div class="phone-bar">
+              <img class="phone-ava" src="logo.png" alt="" width="22" height="22">
+              <span>
+                <span class="phone-title" data-site="brand">PlanEat</span>
+                <span class="phone-sub">бот</span>
+              </span>
+              <span class="phone-sigs" aria-hidden="true"></span>
+            </div>
+
+            <div class="chat scene scene-log">
+              <div class="bubble out">
+                <p>борщ + хліб</p>
+                <time>14:02</time>
+              </div>
+              <div class="bubble in">
+                <p class="bubble-kicker">🍽 Чернетка страви (ще не записано)</p>
+                <p class="item">борщ — 400 г · 320 ккал</p>
+                <p class="item">хліб житній — 40 г · 100 ккал</p>
+                <div class="macros">
+                  <span><strong>420</strong> ккал</span>
+                  <span><strong>18</strong> б</span>
+                  <span><strong>14</strong> ж</span>
+                  <span><strong>52</strong> в</span>
+                </div>
+                <div class="chips">
+                  <span class="chip chip-yes">✅ Підтвердити</span>
+                  <span class="chip">✏️ Виправити</span>
+                  <span class="chip">❌ Скасувати</span>
+                </div>
+                <time>14:02</time>
+              </div>
+            </div>
+
+            <div class="chat scene scene-day">
+              <div class="bubble in wide">
+                <p class="bubble-kicker">📅 Сьогодні (1 вер)</p>
+                <p class="item">Обід · Борщ + хліб · 420 ккал</p>
+                <div class="bars">
+                  <div class="bar">
+                    <span>ккал <strong>420 / 2000</strong></span>
+                    <span class="bar-track"><i style="width:21%"></i></span>
+                  </div>
+                  <div class="bar">
+                    <span>білки <strong>18 / 120</strong></span>
+                    <span class="bar-track"><i style="width:15%"></i></span>
+                  </div>
+                  <div class="bar">
+                    <span>жири <strong>14 / 70</strong></span>
+                    <span class="bar-track"><i style="width:20%"></i></span>
+                  </div>
+                  <div class="bar">
+                    <span>вуглеводи <strong>52 / 250</strong></span>
+                    <span class="bar-track"><i style="width:21%"></i></span>
+                  </div>
+                </div>
+                <time>14:03</time>
+              </div>
+            </div>
+
+            <div class="chat scene scene-plan">
+              <div class="bubble in wide">
+                <p class="bubble-kicker">🗓 План харчування · 7 днів від 1 вер</p>
+                <p class="item"><strong>День 1</strong></p>
+                <p class="item">• Сніданок: Сирники</p>
+                <p class="item">• Обід: Борщ</p>
+                <p class="item">• Вечеря: Гречка з грибами</p>
+                <p class="note">План складено зі збережених рецептів без AI-планування.</p>
+                <div class="chips">
+                  <span class="chip chip-yes">✅ Підтвердити план</span>
+                  <span class="chip">🛒 Список</span>
+                </div>
+                <time>18:10</time>
+              </div>
+            </div>
+
+            <div class="chat scene scene-shop">
+              <div class="bubble in wide">
+                <p class="bubble-kicker">🛒 Список покупок</p>
+                <ul class="shop">
+                  <li><span class="box"></span>Буряк</li>
+                  <li><span class="box"></span>Картопля</li>
+                  <li><span class="box on"></span>Кріп</li>
+                  <li><span class="box"></span>Сметана</li>
+                  <li><span class="box"></span>Борошно</li>
+                </ul>
+                <div class="chips">
+                  <span class="chip">📋 Як текст</span>
+                </div>
+                <time>18:12</time>
+              </div>
+            </div>
+
+            <div class="composer" aria-hidden="true">
+              <span class="composer-plus">+</span>
+              <span class="composer-ph">Повідомлення</span>
+              <span class="composer-send"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -216,34 +388,39 @@
       <div class="wrap">
         <div class="split">
           <div id="umie">
-            <h2 id="umie-title">Що є в beta</h2>
-            <p class="section-lead">Лише те, що вже працює в боті.</p>
-            <ul class="feat">
+            <p class="eyebrow">Closed beta</p>
+            <h2 id="umie-title">Що вже можна натиснути</h2>
+            <p class="section-lead">Лише те, що вже працює в боті. Без дорожньої карти замість продукту.</p>
+            <ul class="feat-grid">
               <li>
                 <strong>Лог їжі</strong>
-                Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш.
+                Текст, фото або голос → приблизна КБЖВ → ти підтверджуєш, правиш або скасовуєш.
               </li>
               <li>
                 <strong>День і цілі</strong>
-                Сьогодні, орієнтири і що вже записано.
+                Сьогодні, орієнтири і що вже записано. Прогрес — як залишок, не як вирок.
               </li>
               <li>
                 <strong>Свої рецепти</strong>
-                План з того, що ти реально готуєш, не з чужого меню.
+                Зберігаєш страви, які готуєш. План збирається з них, не з чужої стрічки.
               </li>
               <li>
-                <strong>План і покупки</strong>
-                Тиждень, список, позначка «я це з’їв».
+                <strong>План на тиждень</strong>
+                Детермінований розклад зі збережених рецептів. Слот можна замінити.
+              </li>
+              <li>
+                <strong>Список покупок</strong>
+                З підтвердженого плану. Відмітити, поправити, скопіювати як текст.
               </li>
               <li>
                 <strong>Експорт і видалення</strong>
-                Дані можна забрати або стерти.
+                Дані можна забрати або стерти. Без окремого кабінету.
               </li>
             </ul>
           </div>
           <div id="ne-e">
             <h2 id="ne-title">Чим не є</h2>
-            <p class="section-lead">Щоб не обіцяти зайвого.</p>
+            <p class="section-lead">Краще сказати одразу.</p>
             <ul class="not-list">
               <li>
                 <strong>Не медицина.</strong>
@@ -258,6 +435,10 @@
                 Немає чату «про дієту» і немає AI meal planner.
               </li>
             </ul>
+            <figure class="aside-photo">
+              <img src="img/market.jpg" alt="Торба з буряком, картоплею і кропом на кухонному столі" width="1024" height="768">
+              <figcaption>Список — з твого плану, не з чужого меню.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -289,10 +470,11 @@
 
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="wrap cta-band-inner">
+        <p class="eyebrow eyebrow-on-forest">Closed beta</p>
         <h2 id="cta-title">Спробувати в Telegram</h2>
-        <p>Closed beta. Якщо підходить цикл «лог + свої рецепти + покупки» — заходь у бота.</p>
+        <p>Якщо підходить цикл «лог + свої рецепти + покупки» — заходь у бота. Новий додаток ставити не треба.</p>
         <a class="btn btn-on-forest" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
-          Відкрити <span data-site="botHandle">@plan_eat_ai_bot</span>
+          Відкрити бота<span class="btn-handle"> · <span data-site="botHandle">@plan_eat_ai_bot</span></span>
         </a>
       </div>
     </section>
@@ -313,6 +495,10 @@
     </div>
   </footer>
 
+  <a class="mobile-cta" data-site="botUrl" data-site-attr="href" href="https://t.me/plan_eat_ai_bot">
+    Відкрити бота в Telegram
+  </a>
+
   <script>
     (function (s) {
       if (!s) return;
@@ -330,15 +516,15 @@
         if (attr) el.setAttribute(attr, val);
         else el.textContent = val;
       });
-      var title = s.brandLong + " — лог їжі, план і покупки";
+      var title = s.brandLong + " — записав, запланував, купив, з’їв";
       document.title = title;
       var map = [
         ['meta[property="og:title"]', title],
         ['meta[property="og:site_name"]', s.brandLong],
         ['meta[property="og:url"]', abs("")],
-        ['meta[property="og:image"]', abs("logo.png")],
+        ['meta[property="og:image"]', abs("img/og.jpg")],
         ['meta[name="twitter:title"]', title],
-        ['meta[name="twitter:image"]', abs("logo.png")],
+        ['meta[name="twitter:image"]', abs("img/og.jpg")],
         ['link[rel="canonical"]', abs(""), "href"]
       ];
       map.forEach(function (row) {
@@ -347,18 +533,22 @@
         el.setAttribute(row[2] || "content", row[1]);
       });
       var ld = document.getElementById("jsonld");
-      if (!ld) return;
-      try {
-        var data = JSON.parse(ld.textContent);
-        (data["@graph"] || []).forEach(function (node) {
-          if (node.name) node.name = s.brandLong;
-          if (node.alternateName) node.alternateName = s.brand;
-          if (node.url) node.url = abs("");
-          if (node.image) node.image = abs("logo.png");
-          if (node.sameAs) node.sameAs = [s.botUrl];
-        });
-        ld.textContent = JSON.stringify(data);
-      } catch (e) {}
+      if (ld) {
+        try {
+          var data = JSON.parse(ld.textContent);
+          (data["@graph"] || []).forEach(function (node) {
+            if (node.name) node.name = s.brandLong;
+            if (node.alternateName) node.alternateName = s.brand;
+            if (node.url) node.url = abs("");
+            if (node.image) node.image = abs("img/og.jpg");
+            if (node.sameAs) node.sameAs = [s.botUrl];
+          });
+          ld.textContent = JSON.stringify(data);
+        } catch (e) {}
+      }
+      var scene = new URLSearchParams(location.search).get("scene");
+      var radio = scene && document.getElementById("sc-" + scene);
+      if (radio) radio.checked = true;
     })(window.SITE);
   </script>
 </body>
