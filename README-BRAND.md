@@ -1,48 +1,42 @@
-# Brand — landing-site
+# FoodLoop — landing and brand kit
 
-Статичний лендінг під GitHub Pages. **CNAME у цей каталог не класти**, поки не буде окремого рішення по домену.
+Public landing: https://hostgpt.org/ · Brand kit: https://hostgpt.org/brand/
 
-## Зараз (public)
+Static GitHub Pages, published from `master:/docs`. Existing `docs/CNAME` points to `hostgpt.org`.
 
-| Поле | Значення |
-|---|---|
-| `brand` | PlanEat |
-| `brandLong` | PlanEat у Telegram |
-| `domain` | https://hostgpt.org/ |
-| `botUrl` | https://t.me/plan_eat_ai_bot |
-| `botHandle` | @plan_eat_ai_bot |
-| Статус | closed beta |
+## Public identity
 
-## Прод (майбутнє)
+Product name: **FoodLoop**. Current Telegram URL: **https://t.me/plan_eat_ai_bot**.
+The Telegram username stays live until the bot itself is renamed. Update `window.SITE` plus static HTML / metadata when the actual address changes.
 
-Робоча назва продукту: **FoodLoop**.
+Main line: **Твоя їжа. Твій ритм.**
 
-Щоб змінити бренд на сайті, досить:
+Brand rules, downloadable assets, copy examples and image provenance are in `docs/brand/README.md` and `docs/brand/prompts.md`. `docs/brand/index.html` is the public gallery. `docs/brand/foodloop-brand-kit.zip` contains editable sources, photographs, icons and finished promotion images.
 
-1. Поля `window.SITE` на початку `index.html` (`brand`, `brandLong`, `domain`, `botUrl`, `botHandle`).
-2. Файл `CNAME` (окремим кроком, не в цьому коміті) + `robots.txt` / `sitemap.xml` під новий хост.
+## Site files
 
-Скрипт унизу `index.html` біндить `[data-site]` і оновлює title / OG / canonical / JSON-LD з цих полів.
+- `docs/index.html`: Ukrainian landing, static SEO / OG / JSON-LD, current bot links.
+- `docs/styles.css`: shared layout and Telegram demo.
+- `docs/foodloop.css`: FoodLoop identity, responsive photo hero and editorial section.
+- `docs/app.js`: brand binding, sticky CTA, keyboard-accessible demo tabs.
+- `docs/brand/`: SVG/PNG identity, 12 SVG icons, 3 original photos, 4 promotion exports.
+- `docs/img/foodloop-*.webp`: optimized photos. Original older assets retained for compatibility.
 
-## Візуал
+## Regenerate and check
 
-- Файли: `docs/index.html` (розмітка + `window.SITE`), `docs/styles.css`, `docs/app.js` (бінд бренду, хедер, reveal, таби телефону). Без збірки — статичний GitHub Pages з `docs/`.
-- Лого: `img/icon.svg` (pixel bowl + check, з `foodbot/assets/brand/planeat-icon.svg`) у хедері / футері / CTA; `img/avatar.png` — аватар бота в мокапі Telegram; `logo.png` — favicon/apple-touch-icon
-- Фон `#faf7f1` / тінт `#f3eee4`, поверхня `#fff`, чорнило `#14201a`, приглушене `#5f6b64`, ліс `#163226` / `#12281F`, акцент `#1f7a45`, м’ята `#4FD98A` / `#e3f7eb`, жовток `#ffc94d`, томат `#ff7a5c`, волосся `#e8e2d6`
-- Шрифти: Manrope 800 для заголовків і тіла; Fraunces italic лише для акцентного слова в h1/h2 (`<em>`). Один Google Fonts stylesheet
-- Hero: світлий, з м’якими glow-плямами (м’ята / жовток / томат) і крапковою сіткою; праворуч — реалістичний мокап телефону з Telegram-чатом і CSS-хореографією (фото → typing → чернетка → тап → «Страву записано» + прогрес дня)
-- Стрічка-тікер під hero — приклади фраз, які реально можна надіслати боту («борщ + хліб», «як завжди», «там ще сметана»)
-- Розділи: Як працює (3 кроки) → Можливості (bento 7 карток) → Всередині бота (телефон з 4 сценами: лог / день / план / покупки, автоперемикання, пауза при hover/фокусі, `?scene=plan` відкриває сцену) → Принципи (темна секція) → Чим не є → FAQ → CTA-картка → футер
-- Сцени телефону та підписи кнопок — копія рядків з каталогів бота (`FoodBot.Infrastructure/Localization/Catalogs`), не вигаданий UI
-- Фото: `img/hero.jpg` (пузир з фото в чаті), `img/plate.jpg` (bento «Лог»), `img/market.jpg` («Чим не є»); шаринг: `img/og.jpg`
-- `color-scheme: light`, `theme-color` = ліс `#12281F`; `prefers-reduced-motion` вимикає всі анімації
+Node dependencies: `sharp`, `playwright`. Browser: installed Chrome, or set `CHROME_PATH`.
 
-## Чесні рамки копі (не розмивати)
+```powershell
+node scripts/build-brand.cjs
+node scripts/check-site.cjs --export
+python scripts/package-brand.py
+node scripts/check-site.cjs
+```
 
-**Є в beta:** текст / фото / голос → КБЖВ → confirm; день і цілі; свої рецепти; план і покупки; експорт і видалення.
+Verification runs a local HTTP server and headless Chrome, checks 1440/768/390/320 px layouts, every demo tab, keyboard controls, FAQ, current Telegram links, image loading, JSON-LD, no-JavaScript content and brand downloads. Screenshots and the report go to ignored `output/`.
 
-**На публічному лендінгу не згадувати:** слеш-команди; телеметрію / сирий текст / фото-архів; PlanEat AI (iOS) / App Store.
+## Copy boundaries
 
-**Немає / не обіцяти:** медицина; live-імпорт Instagram / TikTok; AI-дієтолог.
+Closed beta: text/photo/voice → approximate nutrition draft → user confirmation; diary/goals; own recipes; plan/shopping; data export/deletion. Do not claim medical advice, exact nutritional measurements, automatic imported social-media recipes, guaranteed outcomes, user statistics or an unannounced price. Marketing mockups are illustrative.
 
-Немає вигаданих метрик, рейтингів і «тисяч користувачів». Немає тексту HostGPT як хостинг/оренда — домен лише адреса цього лендінга.
+The bot code and Telegram account are managed separately. This deployment changes the website and promotional identity.

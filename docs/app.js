@@ -21,9 +21,9 @@
       ['meta[property="og:title"]', s.brand + " — їжа, план і покупки в одному чаті Telegram"],
       ['meta[property="og:site_name"]', s.brandLong],
       ['meta[property="og:url"]', abs("")],
-      ['meta[property="og:image"]', abs("img/og.jpg")],
+      ['meta[property="og:image"]', abs("brand/social-cover.jpg")],
       ['meta[name="twitter:title"]', s.brand + " — їжа, план і покупки в одному чаті Telegram"],
-      ['meta[name="twitter:image"]', abs("img/og.jpg")],
+      ['meta[name="twitter:image"]', abs("brand/social-cover.jpg")],
       ['link[rel="canonical"]', abs(""), "href"]
     ].forEach(function (row) {
       var el = document.querySelector(row[0]);
@@ -37,7 +37,7 @@
           if (node.name) node.name = s.brandLong;
           if (node.alternateName) node.alternateName = s.brand;
           if (node.url) node.url = abs("");
-          if (node.image) node.image = abs("img/og.jpg");
+          if (node.image) node.image = abs("brand/social-cover.jpg");
           if (node.sameAs) node.sameAs = [s.botUrl];
         });
         ld.textContent = JSON.stringify(data);
